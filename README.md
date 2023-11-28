@@ -23,4 +23,4 @@ Não haverá a persistência das tarefas em banco de dados. Para isso, podem uti
 ---
 
 ### <a href="https://juninho-oliveira-to-do-list.vercel.app/">Deploy no Vercel</a>
-<img src="/celular.png"  alt="imagem do celular" style="width: 200px;">
+<img src="/celular.gif"  alt="imagem do celular" style="width: 200px;">

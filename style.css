@@ -139,4 +139,12 @@ ul li button{
         font-size: 19.8px;
         width: 320px;
     }
+    button:hover {
+        background-color: #7289DD;
+        color: white;
+        border: none;
+    }
+    h1:hover {
+        color: #F5874F;
+    }
 }

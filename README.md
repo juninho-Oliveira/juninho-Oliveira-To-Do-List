@@ -1,5 +1,4 @@
 # To-Do-List
-# To-Do-List
 # Dando vida ao Algoritmo 
 Lógica de Programação - Projeto final
 O que?
@@ -21,4 +20,4 @@ Obter uma tarefa, através de um parâmetro (id)
 Observações
 Não haverá a persistência das tarefas em banco de dados. Para isso, podem utilizar um array para armazenar a lista das tarefas cadastradas.
 
-<img src="/Sem título-1.png" alt="imagem do celular">
+<img src="/celular.jpg"  alt="imagem do celular">

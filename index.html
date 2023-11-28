@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <main>
+        <section class="card">
+            <h1>Lista de Tarefas</h1>
+            <hr style="width: 100%; margin-top: 5px; margin-bottom: 5px;">
+            <section class="inputsTarefas">
+
+                <input type="text" name="nome" id="nome" placeholder="Nome">
+                <input type="text" name="status" id="status" placeholder="status">
+                <button onclick="adicionarTarefa()">Adicionar</button>
+
+            </section>
+            <hr style="width: 100%; margin-top: 5px; margin-bottom: 5px;">
+            <div class="statusTarefa">
+                <H4>ID</H4>
+                <h4>Tarefa</h4>
+                <h4>Status</h4>
+            </div>
+            <hr style="width: 100%; margin-top: 5px; margin-bottom: 5px;">
+            <section class="Tarefas">
+                <ul id="lista-de-tarefas"></ul>
+            </section>
+            <hr style="width: 100%; margin-top: 5px; margin-bottom: 5px;">
+
+
+        </section>
+    </main>
+    <script>
+        let lista = [{id: 1, nome: "Estudar", status: "Concluída"}];
+
+        function adicionarTarefa() {
+            if (lista.length === 15) {
+                alert("Não pode mais adicionar nenhuma tarefa")
+            } else {
+                let id = lista.length + 1
+                let nome = document.getElementById("nome").value
+                let status = document.getElementById("status").value
+                lista.push({ id, nome, status })
+
+                let elementoLista = document.getElementById("lista-de-tarefas");
+
+                let itemLista = document.createElement('li');
+
+                itemLista.textContent = id + " - " + nome + " - " + status + " - ";
+
+                let botaoDeletar = document.createElement('button');
+                botaoDeletar.textContent = ' Remover';
+                botaoDeletar.style.marginRight = '5px';
+                botaoDeletar.addEventListener('click', function () {
+                    removerTarefa(nome);
+                    elementoLista.removeChild(itemLista);
+                });
+
+                itemLista.appendChild(botaoDeletar);
+
+                let botaoEditar = document.createElement('button');
+                botaoEditar.textContent = 'Editar';
+                botaoEditar.addEventListener('click', function () {
+                    let tarefaAtualizada = editarTarefa(nome);
+                    if (tarefaAtualizada) {
+                        itemLista.textContent = tarefaAtualizada.id + " - " + tarefaAtualizada.nome + " - " + tarefaAtualizada.status + " - ";
+                        itemLista.appendChild(botaoDeletar);
+                        itemLista.appendChild(botaoEditar);
+                    }
+                });
+
+                itemLista.appendChild(botaoEditar);
+
+                elementoLista.appendChild(itemLista);
+            }
+        }
+
+        function editarTarefa(nome) {
+            for (let tarefa of lista) {
+                if (nome === tarefa.nome) {
+
+                    let novoNome = prompt("Digite o novo nome da tarefa:");
+                    let novoStatus = prompt("Digite o novo status da tarefa:");
+                    tarefa.nome = novoNome;
+                    tarefa.status = novoStatus;
+                    return tarefa;
+                }
+            }
+            return null;
+        }
+
+        function removerTarefa(nome) {
+            for (let [i, tarefa] of lista.entries()) {
+                if (nome === tarefa.nome) {
+                    lista.splice(i, 1);
+                    return `Tarefa ${nome}, removida!`;
+                }
+            }
+            return `Tarefa ${nome}, não existe na sua lista de tarefas.`;
+        }
+
+        window.onload = function () {
+            let elementoLista = document.getElementById("lista-de-tarefas");
+            for (let i = 0; i < lista.length; i++) {
+
+                let itemLista = document.createElement('li');
+
+                itemLista.textContent = lista[i].id + " - " + lista[i].nome + " - " + lista[i].status;
+
+                let botaoDeletar = document.createElement('button');
+                botaoDeletar.textContent = 'Remover';
+                botaoDeletar.style.marginRight = '5px';
+                botaoDeletar.addEventListener('click', function () {
+                    removerTarefa(lista[i].nome);
+                    elementoLista.removeChild(itemLista);
+                });
+
+                itemLista.appendChild(botaoDeletar);
+
+                let botaoEditar = document.createElement('button');
+                botaoEditar.textContent = ' Editar';
+                botaoEditar.addEventListener('click', function () {
+                    let tarefaAtualizada = editarTarefa(lista[i].nome);
+                    if (tarefaAtualizada) {
+                        itemLista.textContent = tarefaAtualizada.id + " - " + tarefaAtualizada.nome + " - " + tarefaAtualizada.status + " - ";
+                        itemLista.appendChild(botaoDeletar);
+                        itemLista.appendChild(botaoEditar);
+                    }
+                });
+
+                itemLista.appendChild(botaoEditar);
+
+                elementoLista.appendChild(itemLista);
+            }
+        }
+
+
+
+        window.onload = function () {
+            let elementoLista = document.getElementById("lista-de-tarefas");
+            for (let i = 0; i < lista.length; i++) {
+
+                let itemLista = document.createElement('li');
+
+
+                itemLista.textContent = lista[i].id + " - " + lista[i].nome + " - " + lista[i].status;
+
+                let botaoDeletar = document.createElement('button');
+                botaoDeletar.textContent = 'Remover';
+                botaoDeletar.style.marginRight = '5px'
+                botaoDeletar.addEventListener('click', function () {
+                    removerTarefa(lista[i].nome);
+                    elementoLista.removeChild(itemLista);
+                });
+
+                itemLista.appendChild(botaoDeletar);
+
+                let botaoEditar = document.createElement('button');
+                botaoEditar.textContent = ' Editar';
+                botaoEditar.addEventListener('click', function () {
+                    editarTarefa(lista[i].nome);
+                });
+
+                itemLista.appendChild(botaoEditar);
+
+                elementoLista.appendChild(itemLista);
+            }
+        }
+
+    </script>
+</body>
+
+</html>

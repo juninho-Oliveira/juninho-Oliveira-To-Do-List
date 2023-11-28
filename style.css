@@ -1,0 +1,110 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: 'Caveat', cursive;
+    list-style-type: none;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Caveat&display=swap');
+
+
+/*cor de fundo */
+body {
+    background-color: #7289DD;
+    height: 700px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/*estilo do main*/
+main {
+    border-radius: 5px;
+    width: 350px;
+    height: 500px;
+    background-color: #FFFFFF;
+    border: 5px solid #F5874F;
+}
+
+/*estilo do h1 cards*/
+h1 {
+    font-family: 'Caveat', cursive;
+    color: #F5874F;
+    cursor: pointer;
+}
+
+h1:hover {
+    color:#7289DD;
+}
+
+
+/*estilo do cards*/
+main .card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 8px;
+}
+
+/*estilo dos inputs*/
+input {
+    width: 120px;
+    height: 25px;
+    border: 2px solid #7289DD; 
+    border-radius: 5px; 
+    font-family: 'Caveat', cursive;
+    font-weight: 500;
+}
+
+input:focus {
+    outline: none;
+}
+
+
+main .inputsTarefas {
+    display: flex;
+    gap: 8px;
+    border-radius: 5px;
+}
+
+/*estilo do botão*/
+button {
+    width: 70px;
+    background-color: #7289DD;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: 'Caveat', cursive;
+    font-weight: 600;
+}
+
+button:hover {
+    color: #7289DD;
+    background-color: #FFFFFF;
+    border: 2px solid #7289DD;
+}
+
+button:focus {
+    outline: none;
+}
+
+
+/*statusTarefa*/
+.statusTarefa{
+    width: 300px;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin-right: 20px;
+}
+
+ul li{
+    width: 320px;
+}
+ul li button{
+    width: 60px;
+    margin-left: 5px;
+}

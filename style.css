@@ -123,6 +123,8 @@ ul li button{
     button {
         font-family: 'Playfair Display', serif;
         font-weight: 500;
+        height: 20px;
+        font-size: 14px;
     }
     input {
         width: 120px;
@@ -131,5 +133,10 @@ ul li button{
         border-radius: 5px; 
         font-family: 'Playfair Display', serif;
         font-weight: 500;
+    }
+
+    ul li{
+        font-size: 19.8px;
+        width: 320px;
     }
 }

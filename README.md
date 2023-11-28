@@ -20,4 +20,7 @@ Obter uma tarefa, através de um parâmetro (id)
 Observações
 Não haverá a persistência das tarefas em banco de dados. Para isso, podem utilizar um array para armazenar a lista das tarefas cadastradas.
 
+---
+
+### <a href="https://juninho-oliveira-to-do-list.vercel.app/">Deploy no Vercel</a>
 <img src="/celular.png"  alt="imagem do celular" style="width: 200px;">
